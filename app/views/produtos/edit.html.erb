@@ -1,0 +1,12 @@
+<h1>Vendendo <%= @produto.nome %></h1>
+
+<p> Quantidade no estoque <%= @produto.quantidade %></p>
+<p> Preço/Unidade <%= @produto.preco %></p>
+<%= render "form_saida", produto: @produto %>
+
+<br>
+
+<div>
+  <%= link_to "Show this produto", @produto %> |
+  <%= link_to "Back to produtos", produtos_path %>
+</div>

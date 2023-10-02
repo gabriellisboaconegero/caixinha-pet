@@ -1,0 +1,36 @@
+<%= form_with(model: produto) do |form| %>
+  <% if produto.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(produto.errors.count, "erro") %>: Não foi possivel criar novo produto:</h2>
+
+      <ul>
+        <% produto.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div>
+    <%= form.label :quantidade, style: "display: block" do %>
+      Quantidade no pacote
+    <% end %>
+    <%= form.number_field :quantidade %>
+  </div>
+
+  <div>
+    <%= form.label :preco, style: "display: block" do %>
+      Preco do pacote
+    <% end %>
+    <%= form.text_field :preco %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -31,6 +31,13 @@
   </div>
 
   <div>
+    <%= form.label :preco_venda, style: "display: block" do %>
+      Precode venda por Unidade
+    <% end %>
+    <%= form.text_field :preco_venda %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

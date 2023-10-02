@@ -1,8 +1,7 @@
 <%= form_with(model: produto) do |form| %>
   <% if produto.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(produto.errors.count, "erro") %> não foi possível vender doce:</h2>
-
+      <h2><%= pluralize(produto.errors.count, "erro") %> não foi possível inserir mais doce:</h2>
       <ul>
         <% produto.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -12,14 +11,14 @@
   <% end %>
 
   <div>
-    <%= form.label :vendidos, style: "display: block" do %>
-      Vendidos
+    <%= form.label :quantidade, style: "display: block" do %>
+      Quantidade para adicionar
     <% end %>
-    <%= form.number_field :vendidos, value:0 %>
+    <%= form.number_field :quantidade, value:0 %>
     <%= form.hidden_field :type, value:@type %>
   </div>
 
   <div>
-    <%= form.submit "Vender #{produto.nome}"%>
+    <%= form.submit "Inserir mais #{produto.nome}"%>
   </div>
 <% end %>

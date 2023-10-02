@@ -1,8 +1,12 @@
 <h1>Vendendo <%= @produto.nome %></h1>
 
 <p> Quantidade no estoque <%= @produto.quantidade %></p>
-<p> Preço/Unidade <%= @produto.preco %></p>
-<%= render "form_saida", produto: @produto %>
+<p> Preço/Unidade <%= @produto.preco_venda %></p>
+<% if @type == 'vender' %>
+  <%= render "form_saida", produto: @produto %>
+<% elsif @type == 'adicionar' %>
+  <%= render "form_inserir", produto: @produto %>
+<% end %>
 
 <br>
 

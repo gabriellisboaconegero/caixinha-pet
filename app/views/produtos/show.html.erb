@@ -3,7 +3,8 @@
 <%= render @produto %>
 
 <div>
-  <%= link_to "Vender", edit_produto_path(@produto) %> |
+  <%= button_to "Vender", edit_produto_path(@produto), method: :get, params:{edit_type: :vender}%> |
+  <%= button_to "Inserir mais #{@produto.nome}", edit_produto_path(@produto), method: :get, params: {edit_type: :adicionar} %> |
   <%= link_to "Back to produtos", produtos_path %>
 
   <%= button_to "Destroy this produto", @produto, method: :delete %>

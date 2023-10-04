@@ -5,7 +5,7 @@
   <% @produtos.each do |produto| %>
       <%= render produto %>
       <%= link_to "Colsultar #{produto.nome}", produto %> |
-      <%= link_to "Vender", edit_produto_path(produto) %>
+      <%= link_to "Vender", produto_venda_path(produto) %>
     </div>
   <% end %>
 </div>

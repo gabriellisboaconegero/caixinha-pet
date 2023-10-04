@@ -1,8 +1,8 @@
-<h1>Inserindo <%= @produto.nome %></h1>
+<h1>Vendendo <%= @produto.nome %></h1>
 
 <p> Quantidade no estoque <%= @produto.quantidade %></p>
 <p> Preço/Unidade <%= @produto.preco_venda %></p>
-<%= render "form_inserir", produto: @produto %>
+<%= render "form_saida", produto: @produto %>
 
 <br>
 

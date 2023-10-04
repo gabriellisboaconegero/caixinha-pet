@@ -1,4 +1,4 @@
-<%= form_with(model: produto) do |form| %>
+<%= form_with(model: produto, url: produto_venda_path, method: :post) do |form| %>
   <% if produto.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(produto.errors.count, "erro") %> não foi possível vender doce:</h2>
@@ -16,7 +16,6 @@
       Vendidos
     <% end %>
     <%= form.number_field :vendidos, value:0 %>
-    <%= form.hidden_field :type, value:@type %>
   </div>
 
   <div>
